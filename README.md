@@ -1,37 +1,41 @@
-## Welcome to GitHub Pages
+# Introducción a AngularJS 1.x
 
-You can use the [editor on GitHub](https://github.com/germanio/intro-a-angularjs/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Qué es AngularJS?
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## De qué trata el tutorial?
+ Vamos a desarrollar desde cero una aplicación que nos muestre información sobre las estaciones de Ecobici con las siguientes características:
 
-### Markdown
+- Usar los datos abiertos del Gobierno de la Ciudad de Buenos Aires para traer información actualizada de las estaciones
+- Lista de estaciones, que puede filtrarse y ordenarse
+- Las tres estaciones más cercanas a una posición dada por latitud y longitud
+- Mostrar las estaciones en un mapa
+- Guardar las estaciones favoritas del usuario en el navegador
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Conocimientos previos
+ En este tutorial se asume que ya se tiene conocimiento sobre las siguientes tecnologías:
 
-```markdown
-Syntax highlighted code block
+- HTML (estructura de una página web, etiquetas, formularios, cómo agregar y usar una hoja de estilos, cómo agregar y usar una librería Javascript)
+- CSS (estructura de una hoja de estilos, selectores, clases)
+- Javascript (variables, tipos de datos, estructuras de control, funciones, objetos, uso de librerías de terceros)
+- Formatos XML y JSON
 
-# Header 1
-## Header 2
-### Header 3
+### Contenidos
 
-- Bulleted
-- List
+1. Instalación
+2. Hola mundo! (Estructura inicial)
+3. Lista estática de estaciones (_Views_, _Models_ y _Controllers_)
+4. Mejoras a la aplicación (_Components_, _Services_ e inyección de dependencias)
+5. Ver detalles de una estación (Multiples _Views_ y uso de _ngRoute_)
+6. Filtramos y ordenamos las estaciones (_Filters_ y data binding)
+7. Las estaciones más cercanas (filtros a medida e _Event Handlers_)
+8. Mis estaciones favoritas (Persistencia en el navegador y librerías de terceros - 1ra parte)
+9. Ahora usemos datos reales (_$http_ y librerías de terceros - 2da parte)
+10. Más visual, mostremos las estaciones en un mapa (librerías de terceros - 3ra parte e introducción a directivas)
 
-1. Numbered
-2. List
+## Referencias
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/germanio/intro-a-angularjs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Tutorial oficial de AngularJS 1.x: https://docs.angularjs.org/tutorial
+- API Ecobici: https://recursos-data.buenosaires.gob.ar/ckan2/ecobici/estado-ecobici.xml
+- XML2JSON: https://www.npmjs.com/package/xml2json
+- ngStorage: https://github.com/gsklee/ngStorage
+- Leaflet: http://tombatossals.github.io/angular-leaflet-directive/#!/examples/marker
