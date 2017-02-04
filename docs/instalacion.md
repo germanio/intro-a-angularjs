@@ -7,10 +7,10 @@
 
     ptf-angular
         --> public
-        --> html
-        --> css
-        --> img
-        --> app
+            --> html
+            --> css
+            --> img
+            --> app
 
  Dentro de `public` vamos a guardar todos los archivos que nuestra aplicación va a usar, mientras que la carpeta raíz va a contener archivos más bien relacionados al proyecto.
  En `html` van a ir las páginas Html, en `css` las hojas de estilos, en `img` las imágenes y finalmente en `app` vamos a guardar el código Javascript con Angularjs.
