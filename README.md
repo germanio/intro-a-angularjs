@@ -43,7 +43,7 @@
 
 ## Referencias
 
-- Qué se Angular: https://es.wikipedia.org/wiki/AngularJS
+- Qué es Angular: https://es.wikipedia.org/wiki/AngularJS
 - Tutorial oficial de AngularJS 1.x: https://docs.angularjs.org/tutorial
 - API Ecobici: https://recursos-data.buenosaires.gob.ar/ckan2/ecobici/estado-ecobici.xml
 - XML2JSON: https://www.npmjs.com/package/xml2json
