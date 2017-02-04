@@ -9,7 +9,7 @@
 
 ## Para qué sirve?
  Se utiliza para desarrollar aplicaciones web de una sola página (SPI ó Single Page Applications). En donde el usuario interactúa con la aplicación pero la página nunca se refresca, sino que la información es pedida al servidor remoto, procesada y mostrada sin abandonar la página principal.
- También se lo puede usar para desarrollar juegos, como el (conocido 2048)[https://www.ng-newsletter.com/posts/building-2048-in-angularjs.html]
+ También se lo puede usar para desarrollar juegos, como [2048](https://www.ng-newsletter.com/posts/building-2048-in-angularjs.html) o el conocido [buscaminas](http://www.simplygoodcode.com/2014/04/angularjs-game-programming-making-minesweeper/).
 
 ## De qué trata el tutorial?
  Vamos a desarrollar desde cero una aplicación que nos muestre información sobre las estaciones de Ecobici con las siguientes características:
@@ -30,7 +30,7 @@
 
 ### Contenidos
 
-1. Instalación
+1. [Instalación](./docs/instalacion.html)
 2. Hola mundo! (Estructura inicial)
 3. Lista estática de estaciones (_Views_, _Models_ y _Controllers_)
 4. Mejoras a la aplicación (_Components_, _Services_ e inyección de dependencias)
