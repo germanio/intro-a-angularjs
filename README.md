@@ -1,6 +1,15 @@
 # Introducción a AngularJS 1.x
 
 ## Qué es AngularJS?
+ AngularJS (también conocido como "Angular" o "Angular.js"), es un framework JavaScript de código abierto, creado y mantenido por Google, cuyo objetivo es aumentar las aplicaciones basadas en navegador con capacidad de Modelo Vista Controlador (MVC ó Model View Controller), en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.
+
+ Éste framework lee el HTML de las distintas vistas, que contienen atributos y etiquetas personalizados, uniendo las piezas de entrada o salida de la página a un modelo representado por las variables estándar de JavaScript. Los valores de las variables de JavaScript se pueden configurar manualmente, o recuperados de los recursos JSON estáticos o dinámicos.
+
+ Angular sigue el patrón MVVM (Model View View-Model) de ingeniería de software y alienta la articulación flexible entre la presentación, datos y componentes lógicos. Con el uso de la inyección de dependencias, Angular lleva servicios tradicionales del lado del servidor, tales como controladores dependientes de la vista, a las aplicaciones web del lado del cliente. En consecuencia, gran parte de la carga en el backend se reduce, lo que conlleva a aplicaciones web mucho más ligeras.
+
+## Para qué sirve?
+ Se utiliza para desarrollar aplicaciones web de una sola página (SPI ó Single Page Applications). En donde el usuario interactúa con la aplicación pero la página nunca se refresca, sino que la información es pedida al servidor remoto, procesada y mostrada sin abandonar la página principal.
+ También se lo puede usar para desarrollar juegos, como el (conocido 2048)[https://www.ng-newsletter.com/posts/building-2048-in-angularjs.html]
 
 ## De qué trata el tutorial?
  Vamos a desarrollar desde cero una aplicación que nos muestre información sobre las estaciones de Ecobici con las siguientes características:
@@ -34,6 +43,7 @@
 
 ## Referencias
 
+- Qué se Angular: https://es.wikipedia.org/wiki/AngularJS
 - Tutorial oficial de AngularJS 1.x: https://docs.angularjs.org/tutorial
 - API Ecobici: https://recursos-data.buenosaires.gob.ar/ckan2/ecobici/estado-ecobici.xml
 - XML2JSON: https://www.npmjs.com/package/xml2json
