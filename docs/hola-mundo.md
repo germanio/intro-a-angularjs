@@ -38,12 +38,12 @@
  Ahora podemos agregar un _binding_ para ver si nuestro "Hola Mundo" de verdad funciona.
 
     <body>
-        <h1>Hola {{ 'Mundo' + '!' }}</h1>
+        <h1>Hola \{\{ 'Mundo' + '!' \}\}</h1>
     </body>
 
  Esto demuestra dos funcionalidades principales de Angular para armar las vistas (templates):
 
- - Un _binding_, que se escribe con doble llave: `{{ }}`
+ - Un _binding_, que se escribe con doble llave: `\{\{ \}\}`
  - Una expresión en Javascript, como la concatenación de dos strings: `'Mundo' + '!'`
 
  El binding le dice a Angular que debe evaluar la expresión que contiene y usar el resultado de la misma para reemplazar dicho binding en el DOM de la página.
@@ -68,4 +68,4 @@
 
  Probá de agregar un nuevo binding con la expresión que vos quieras. Por ejemplo, la suma de dos números:
 
-    <p>La expresión 5 + 3 es igual a {{ 5 + 3 }}</p>
+    <p>La expresión 5 + 3 es igual a \{\{ 5 + 3 \}\}</p>
