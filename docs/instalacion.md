@@ -25,4 +25,4 @@
 
 ## Cómo probar la aplicación
 
- Simplemente hay que abrir el archivo `index.html` con el navegador preferido, para que éste muestre la aplicación.
+ Simplemente hay que abrir el archivo `index.html` (que todavía no creamos) con el navegador preferido, para que éste muestre la aplicación.

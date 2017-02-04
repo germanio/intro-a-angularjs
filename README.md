@@ -20,6 +20,8 @@
 - Mostrar las estaciones en un mapa
 - Guardar las estaciones favoritas del usuario en el navegador
 
+ Por simplicidad, la aplicación va a constar sólo del _frontend_ (código que se usa del lado del usuario), para que sea más fácil de entender y desarrollar, sin tener que meternos en temas como Bases de Datos o lenguajes y herramientas para desarrollo del _backend_ (código que se usa del lado del servidor, donde usualmente se almacenan y procesan datos y se interactúa con otros sistemas).
+
 ### Conocimientos previos
  En este tutorial se asume que ya se tiene conocimiento sobre las siguientes tecnologías:
 
@@ -45,6 +47,7 @@
 
 - Qué es Angular: https://es.wikipedia.org/wiki/AngularJS
 - Tutorial oficial de AngularJS 1.x: https://docs.angularjs.org/tutorial
+- Bootstrap: http://getbootstrap.com/getting-started/
 - API Ecobici: https://recursos-data.buenosaires.gob.ar/ckan2/ecobici/estado-ecobici.xml
 - XML2JSON: https://www.npmjs.com/package/xml2json
 - ngStorage: https://github.com/gsklee/ngStorage
