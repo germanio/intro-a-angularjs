@@ -1,0 +1,1 @@
+# Lista estática de estaciones
