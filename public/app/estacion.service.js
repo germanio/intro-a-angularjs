@@ -1,7 +1,8 @@
 angular.
     module('ptfApp').
     factory('Estacion', function() {
-        return [{
+        return {
+            estaciones: [{
                 id: '1',
                 nombre: 'Facultad de Derecho',
                 ubicacion: 'Figueroa Alcorta y Pueyrredón',
@@ -13,7 +14,6 @@ angular.
                 ubicacion: 'Libertador altura Retiro',
                 bicicletas_disponibles: 15,
                 anclajes_disponibles: 20
-            }]; 
-        });
-    }
-);
+            }]
+        };
+    });
