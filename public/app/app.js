@@ -1,7 +1,7 @@
 // Definimos el módulo para la aplicación
 var ptfApp = angular.module('ptfApp', []);
 
-// Define the `PhoneListController` controller on the `ptfApp` module
+// Definimos el controlador `ListaEstacionesController` en el módulo `ptfApp`
 ptfApp.controller('ListaEstacionesController', function ListaEstacionesController($scope) {
     $scope.estaciones = [{
         id: '1',
