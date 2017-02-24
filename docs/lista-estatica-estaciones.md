@@ -1,6 +1,6 @@
 # Lista estática de estaciones
 
- En el capítulo anterior armamos una aplicación básica con AngularJS y vimos cómo se integra Angular a nuestro html (view).
+ En el [capítulo anterior](./hola-mundo.html) armamos una aplicación básica con AngularJS y vimos cómo se integra Angular a nuestro html (view).
  Pero todavía no estamos mostrando nada sobre las estaciones de bicicletas, ni conocemos las partes fundamentales de éste framework.
  Así que en éste capítulo vamos a empezar a profundizar ambas.
 
