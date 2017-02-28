@@ -1,3 +1,4 @@
+// Registra el servicio de estaciones, donde están los datos de prueba
 angular.
     module('ptfApp').
     factory('Estacion', function() {

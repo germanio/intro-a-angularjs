@@ -36,12 +36,13 @@
 2. [Hola mundo!](./docs/hola-mundo.html) (Estructura inicial)
 3. [Lista estática de estaciones](./docs/lista-estatica-estaciones.html) (_Views_, _Models_ y _Controllers_)
 4. [Mejoras a la aplicación](./docs/mejoras.html) (_Components_, _Services_ e inyección de dependencias)
-5. [Ver detalles de una estación](./docs/detalles-estacion.html) (Multiples _Views_ y uso de _ngRoute_)
-6. [Filtramos y ordenamos las estaciones](./docs/filtros-y-orden.html) (_Filters_ y data binding)
-7. [Las estaciones más cercanas](./docs/estaciones-cercanas.html) (filtros a medida e _Event Handlers_)
+5. [Más Mejoras](./docs/mejoras-ui.html) (Repaso, modularización de templates y servidor web local)
+6. [Ver detalles de una estación](./docs/detalles-estacion.html) (Multiples _Views_ y uso de _ngRoute_)
+7. [Filtramos y ordenamos las estaciones](./docs/filtros-y-orden.html) (_Filters_ y data binding)
+8. [Las estaciones más cercanas](./docs/estaciones-cercanas.html) (filtros a medida e _Event Handlers_)
 8. [Mis estaciones favoritas](./docs/estaciones-favoritas.html) (Persistencia en el navegador y librerías de terceros - 1ra parte)
-9. [Ahora usemos datos reales](./docs/datos-reales.html) (_$http_ y librerías de terceros - 2da parte)
-10. [Más visual, mostremos las estaciones en un mapa](./docs/mapa.html) (librerías de terceros - 3ra parte e introducción a directivas)
+10. [Ahora usemos datos reales](./docs/datos-reales.html) (_$http_ y librerías de terceros - 2da parte)
+11. [Más visual, mostremos las estaciones en un mapa](./docs/mapa.html) (librerías de terceros - 3ra parte e introducción a directivas)
 
 ## Referencias
 

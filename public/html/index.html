@@ -7,12 +7,27 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     </head>
     <body>
-        <estaciones></estaciones>
+        <div class="page-header">
+            <h1>Pedalear Trae Felicidad <small>un tutorial de PTF sobre AngularJS 1.x</small></h1>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Lista de estaciones de bicicletas</div>
+                        <div class="panel-body">
+                            <estaciones></estaciones>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Librerías acá -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
         <script src="../app/app.js"></script>
         <script src="../app/estaciones.component.js"></script>
         <script src="../app/estacion.service.js"></script>
