@@ -2,16 +2,8 @@
 angular.
   module('ptfApp').
   component('estaciones', {
-    template:
-        '<ul>' +
-            '<li ng-repeat="estacion in $ctrl.estaciones">' +
-                '<span>ID: {{estacion.id}}</span>' +
-                '<p>Nombre: {{estacion.nombre}}</p>' +
-                '<p>Ubicación: {{estacion.ubicacion}}</p>' +
-                '<p>Bicicletas disponibles: {{estacion.bicicletas_disponibles}}</p>' +
-                '<p>Anclajes disponibles: {{estacion.anclajes_disponibles}}</p>' +
-            '</li>' +
-        '</ul>',
+    //Nota: la url de éste template es relativa a index.html
+    templateUrl: 'lista-estaciones.template.html',
     controller: ['Estacion', function EstacionesController(Estacion) {
         this.estaciones = Estacion.estaciones;
     }]
