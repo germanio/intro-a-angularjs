@@ -135,7 +135,8 @@
  Al iniciar el tutorial agregamos Bootstrap, pero todavía no lo usamos. Vamos a darle a nuestra aplicación un poco de estilo antes de continuar.
  Vamos a mejorar la vista agregando un encabezado, un panel, la grilla responsive de Bootstrap y algunas otras cosas a los templates, que van a quedar así:
 
- `public/html/index.html` (sólo el `body` sin las librerías por claridad)
+ `public/html/index.html` (sólo el `body` sin las librerías por claridad):
+
 
      <body>
          <div class="page-header">
@@ -155,29 +156,29 @@
          </div>
      </body>
 
- `public/html/lista-estaciones.template.html`
+ `public/html/lista-estaciones.template.html`:
 
  {% raw %}
- <ul class="list-group">
-     <li ng-repeat="estacion in $ctrl.estaciones" class="list-group-item">
-         <h4 class="list-group-item-heading">
-             {{estacion.nombre}}
-             <small>ID: {{estacion.id}}</small>
-         </h4>
-         <p>
-             <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-             Bicicletas disponibles <span class="badge">{{estacion.bicicletas_disponibles}}</span>
-         </p>
-         <p>
-             <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-             Anclajes disponibles <span class="badge">{{estacion.anclajes_disponibles}}</span>
-         </p>
-         <p>
-             <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-             {{estacion.ubicacion}}
-         </p>
-     </li>
- </ul>
+     <ul class="list-group">
+         <li ng-repeat="estacion in $ctrl.estaciones" class="list-group-item">
+             <h4 class="list-group-item-heading">
+                 {{estacion.nombre}}
+                 <small>ID: {{estacion.id}}</small>
+             </h4>
+             <p>
+                 <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                 Bicicletas disponibles <span class="badge">{{estacion.bicicletas_disponibles}}</span>
+             </p>
+             <p>
+                 <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                 Anclajes disponibles <span class="badge">{{estacion.anclajes_disponibles}}</span>
+             </p>
+             <p>
+                 <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                 {{estacion.ubicacion}}
+             </p>
+         </li>
+     </ul>
  {% endraw %}
 
 ## Ahora te toca a vos!
