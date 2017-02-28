@@ -176,3 +176,7 @@
          </p>
      </li>
  </ul>
+
+## Ahora te toca a vos!
+
+1. Ejercicio: En los capítulos anteriores creamos un nuevo componente para mostrar la cantidad de estaciones. Separá el template del componente y agregale estilos con Bootstrap.
