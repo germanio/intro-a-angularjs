@@ -156,6 +156,8 @@
      </body>
 
  `public/html/lista-estaciones.template.html`
+
+ {% raw %}
  <ul class="list-group">
      <li ng-repeat="estacion in $ctrl.estaciones" class="list-group-item">
          <h4 class="list-group-item-heading">
@@ -176,6 +178,7 @@
          </p>
      </li>
  </ul>
+ {% endraw %}
 
 ## Ahora te toca a vos!
 
