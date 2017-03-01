@@ -1,2 +1,2 @@
 // Definimos el módulo para la aplicación
-var ptfApp = angular.module('ptfApp', []);
+var ptfApp = angular.module('ptfApp', ['ngRoute']);
