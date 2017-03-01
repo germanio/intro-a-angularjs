@@ -15,8 +15,8 @@
                 <div class="col-xs-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">Lista de estaciones de bicicletas</div>
-                        <div class="panel-body">
-                            <estaciones></estaciones>
+                        <div class="panel-body" ng-view>
+                            <!-- lo dejamos vacío para que pueda ser completado por cada view -->
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
         <script src="../app/app.js"></script>
+        <script src="../app/app.config.js"></script>
+
         <script src="../app/estaciones.component.js"></script>
+        <script src="../app/estacion-detalle.component.js"></script>
         <script src="../app/estacion.service.js"></script>
     </body>
 </html>
