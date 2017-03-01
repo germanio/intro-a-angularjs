@@ -1,10 +1,11 @@
 angular.
   module('ptfApp').
   component('detalleEstacion', {
-    template: '<span>{{$ctrl.id}}</span>',
-    controller: ['$routeParams',
-      function detalleEstacionController($routeParams) {
+    templateUrl: 'detalle-estacion.template.html',
+    controller: ['$routeParams', 'Estacion',
+      function detalleEstacionController($routeParams, Estacion) {
         this.id = $routeParams.id;
+        this.estacion = Estacion.get(this.id);
       }
     ]
   });
