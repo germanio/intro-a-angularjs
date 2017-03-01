@@ -12,13 +12,18 @@
  También se lo puede usar para desarrollar juegos, como [2048](https://www.ng-newsletter.com/posts/building-2048-in-angularjs.html) o el conocido [buscaminas](http://www.simplygoodcode.com/2014/04/angularjs-game-programming-making-minesweeper/).
 
 ## De qué trata el tutorial?
- Vamos a desarrollar desde cero una aplicación que nos muestre información sobre las estaciones de Ecobici con las siguientes características:
+
+ Vamos a desarrollar desde cero una aplicación que vamos a llamar Pedalear Trae Felicidad (PTF!) que nos muestre información sobre las estaciones de Ecobici, utilizando datos reales obtenidos de los datos abiertos del Gobierno de la Ciudad de Buenos Aires.
+ En cada capítulo vamos a tener una versión andando de la aplicación, donde le vamos a ir agregando funcionalidades nuevas y explicando conceptos de cómo funciona AngularJS y para qué.
+ Como en cada capítulo vamos a tener una versión distinta de nuestra aplicación, el código de cada uno está en un [branch distinto](https://github.com/germanio/intro-a-angularjs/branches) para que puedan bajarlo y jugar con él.
+
+ <!-- Vamos a desarrollar desde cero una aplicación que nos muestre información sobre las estaciones de Ecobici con las siguientes características:
 
 - Usar los datos abiertos del Gobierno de la Ciudad de Buenos Aires para traer información actualizada de las estaciones
 - Lista de estaciones, que puede filtrarse y ordenarse
 - Las tres estaciones más cercanas a una posición dada por latitud y longitud
 - Mostrar las estaciones en un mapa
-- Guardar las estaciones favoritas del usuario en el navegador
+- Guardar las estaciones favoritas del usuario en el navegador -->
 
  Por simplicidad, la aplicación va a constar sólo del _frontend_ (código que se usa del lado del usuario), para que sea más fácil de entender y desarrollar, sin tener que meternos en temas como Bases de Datos o lenguajes y herramientas para desarrollo del _backend_ (código que se usa del lado del servidor, donde usualmente se almacenan y procesan datos y se interactúa con otros sistemas).
 
@@ -29,20 +34,21 @@
 - CSS (estructura de una hoja de estilos, selectores, clases)
 - Javascript (variables, tipos de datos, estructuras de control, funciones, objetos, uso de librerías de terceros)
 - Formatos XML y JSON
+- Tener instalado un servidor Http (nosotros vamos a usar uno que provee NodeJS)
 
 ### Contenidos
 
 1. [Instalación](./docs/instalacion.html)
-2. [Hola mundo!](./docs/hola-mundo.html) (Estructura inicial)
-3. [Lista estática de estaciones](./docs/lista-estatica-estaciones.html) (_Views_, _Models_ y _Controllers_)
-4. [Mejoras a la aplicación](./docs/mejoras.html) (_Components_, _Services_ e inyección de dependencias)
-5. [Más Mejoras](./docs/mejoras-ui.html) (Repaso, modularización de templates y servidor web local)
-6. [Ver detalles de una estación](./docs/detalles-estacion.html) (Multiples _Views_ y uso de _ngRoute_)
-7. [Filtramos y ordenamos las estaciones](./docs/filtros-y-orden.html) (_Filters_ y data binding)
-8. [Las estaciones más cercanas](./docs/estaciones-cercanas.html) (filtros a medida e _Event Handlers_)
-8. [Mis estaciones favoritas](./docs/estaciones-favoritas.html) (Persistencia en el navegador y librerías de terceros - 1ra parte)
-10. [Ahora usemos datos reales](./docs/datos-reales.html) (_$http_ y librerías de terceros - 2da parte)
-11. [Más visual, mostremos las estaciones en un mapa](./docs/mapa.html) (librerías de terceros - 3ra parte e introducción a directivas)
+1. [Hola mundo!](./docs/hola-mundo.html) (Estructura inicial)
+1. [Lista estática de estaciones](./docs/lista-estatica-estaciones.html) (_Views_, _Models_ y _Controllers_)
+1. [Mejoras a la aplicación](./docs/mejoras.html) (_Components_, _Services_ e inyección de dependencias)
+1. [Más Mejoras](./docs/mejoras-ui.html) (Repaso, modularización de templates y servidor web local)
+1. [Ver detalles de una estación](./docs/detalles-estacion.html) (Multiples _Views_ y uso de _ngRoute_)
+1. [Ahora usemos datos reales](./docs/datos-reales.html) (_$http_ y librerías de terceros - 2da parte)
+<!-- 1. [Filtramos y ordenamos las estaciones](./docs/filtros-y-orden.html) (_Filters_ y data binding)
+1. [Las estaciones más cercanas](./docs/estaciones-cercanas.html) (filtros a medida e _Event Handlers_)
+1. [Mis estaciones favoritas](./docs/estaciones-favoritas.html) (Persistencia en el navegador y librerías de terceros - 1ra parte)
+1. [Más visual, mostremos las estaciones en un mapa](./docs/mapa.html) (librerías de terceros - 3ra parte e introducción a directivas) -->
 
 ## Referencias
 
@@ -51,5 +57,5 @@
 - Bootstrap: http://getbootstrap.com/getting-started/
 - API Ecobici: https://recursos-data.buenosaires.gob.ar/ckan2/ecobici/estado-ecobici.xml
 - XML2JSON: https://www.npmjs.com/package/xml2json
-- ngStorage: https://github.com/gsklee/ngStorage
-- Leaflet: http://tombatossals.github.io/angular-leaflet-directive/#!/examples/marker
+<!-- - ngStorage: https://github.com/gsklee/ngStorage
+- Leaflet: http://tombatossals.github.io/angular-leaflet-directive/#!/examples/marker -->
