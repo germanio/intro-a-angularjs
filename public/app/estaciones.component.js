@@ -5,6 +5,10 @@ angular.
     //Nota: la url de éste template es relativa a index.html
     templateUrl: 'lista-estaciones.template.html',
     controller: ['Estacion', function EstacionesController(Estacion) {
-        this.estaciones = Estacion.estaciones;
+        var self = this;
+        self.estaciones = [];
+        Estacion.obtenerTodos(function(estaciones) {
+            self.estaciones = estaciones;
+        });
     }]
 });

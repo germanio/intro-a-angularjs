@@ -1,13 +1,13 @@
 <ul class="list-group">
     <li ng-repeat="estacion in $ctrl.estaciones" class="list-group-item">
         <h4 class="list-group-item-heading">
-            {{estacion.nombre}}
-            <small>ID: {{estacion.id}}</small>
+            {{estacion.EstacionNombre}}
+            <small>ID: {{estacion.EstacionId}}</small>
         </h4>
         <p>
             <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-            {{estacion.ubicacion}}
+            {{estacion.Lugar}}
         </p>
-        <a type="button" class="btn btn-primary" href="#!/estaciones/{{estacion.id}}">Ver Detalle</a>
+        <a type="button" class="btn btn-primary" href="#!/estaciones/{{estacion.EstacionId}}">Ver Detalle</a>
     </li>
 </ul>

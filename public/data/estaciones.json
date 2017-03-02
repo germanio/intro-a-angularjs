@@ -1,0 +1,28 @@
+[
+  {
+    "EstacionId": "1",
+    "EstacionNombre": "Facultad de Derecho",
+    "BicicletaDisponibles": "9",
+    "EstacionDisponible": "SI",
+    "Latitud": "-34.583271",
+    "Longitud": "-58.392579",
+    "Numero": "2260",
+    "Lugar": "Figueroa Alcorta y Pueyrredón",
+    "Piso": null,
+    "AnclajesTotales": "28",
+    "AnclajesDisponibles": "19"
+  },
+  {
+    "EstacionId": "2",
+    "EstacionNombre": "Retiro",
+    "BicicletaDisponibles": "15",
+    "EstacionDisponible": "SI",
+    "Latitud": "-34.592966",
+    "Longitud": "-58.374379",
+    "Numero": "0",
+    "Lugar": "Libertador altura Retiro",
+    "Piso": null,
+    "AnclajesTotales": "20",
+    "AnclajesDisponibles": "5"
+  }
+]
