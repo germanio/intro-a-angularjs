@@ -44,7 +44,7 @@
 1. [Mejoras a la aplicación](./docs/mejoras.html) (_Components_, _Services_ e inyección de dependencias)
 1. [Más Mejoras](./docs/mejoras-ui.html) (Repaso, modularización de templates y servidor web local)
 1. [Ver detalles de una estación](./docs/detalles-estacion.html) (Multiples _Views_ y uso de _ngRoute_)
-1. [Ahora usemos datos reales](./docs/datos-reales.html) (_$http_ y librerías de terceros - 2da parte)
+1. [Ahora usemos datos reales](./docs/datos-reales.html) (Uso del servicio _$http_)
 <!-- 1. [Filtramos y ordenamos las estaciones](./docs/filtros-y-orden.html) (_Filters_ y data binding)
 1. [Las estaciones más cercanas](./docs/estaciones-cercanas.html) (filtros a medida e _Event Handlers_)
 1. [Mis estaciones favoritas](./docs/estaciones-favoritas.html) (Persistencia en el navegador y librerías de terceros - 1ra parte)
@@ -56,6 +56,6 @@
 - Tutorial oficial de AngularJS 1.x: https://docs.angularjs.org/tutorial
 - Bootstrap: http://getbootstrap.com/getting-started/
 - API Ecobici: https://recursos-data.buenosaires.gob.ar/ckan2/ecobici/estado-ecobici.xml
-- XML2JSON: https://www.npmjs.com/package/xml2json
-<!-- - ngStorage: https://github.com/gsklee/ngStorage
+<!-- - XML2JSON: https://www.npmjs.com/package/xml2json
+- ngStorage: https://github.com/gsklee/ngStorage
 - Leaflet: http://tombatossals.github.io/angular-leaflet-directive/#!/examples/marker -->
