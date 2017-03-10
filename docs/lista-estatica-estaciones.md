@@ -189,6 +189,10 @@
  La directiva `ngController` le indica a AngularJS a qué controlador debe referenciar en esa etiqueta.
  Una vez referenciado el controlador en una etiqueta html, su `$scope` queda vinculado a dicha etiqueta (y sus hijas), y sus datos y funciones pueden ser llamados usando expresiones o directivas.
 
+## Cómo quedó?
+
+<script async src="//jsfiddle.net/germanio/4y93nzxh/3/embed/html,result/"> </script>
+
 ## Paso 4: ahora te toca a vos!
 
  En éste capítulo vimos muchos conceptos importantes y establecimos el esqueleto de nuestra aplicación.
