@@ -156,6 +156,15 @@
 
  Y reducir lo que mostramos en la lista, donde podemos dejar el nombre y la ubicación.
 
+## Cómo se ve ahora la aplicación?
+
+La lista de estaciones se ve así:
+
+![Lista de estaciones](https://raw.githubusercontent.com/germanio/intro-a-angularjs/master/docs/capturas/detalle-estacion-lista.png)
+
+Mientras que el detalle de una estación (en éste caso la de ID 1):
+
+![Detalle de estación 1](https://raw.githubusercontent.com/germanio/intro-a-angularjs/master/docs/capturas/detalle-estacion-detalle.png)
 ## Ahora te toca a vos!
 
 1. Ejercicio: agregá otro botón en cada estación de la lista, que lleve a una imagen de la estación, que debe quedar guardada en `public/img`. Ayuda: que los nombres de las imágenes tengan el `id` de la estación, así te va a resultar muy fácil pedirlas al servidor.
