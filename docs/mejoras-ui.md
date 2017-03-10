@@ -181,6 +181,12 @@
      </ul>
  {% endraw %}
 
+## Cómo se ve?
+
+Ahora que necesitamos un servidor http local, es más difícil mostrar la aplicación andando, pero acá va una captura de pantalla:
+
+![Lista de Estaciones](https://raw.githubusercontent.com/germanio/intro-a-angularjs/master/docs/capturas/mas-mejoras.png)
+
 ## Ahora te toca a vos!
 
 1. Ejercicio: En los capítulos anteriores creamos un nuevo componente para mostrar la cantidad de estaciones. Separá el template del componente y agregale estilos con Bootstrap.
