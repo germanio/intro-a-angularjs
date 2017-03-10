@@ -68,6 +68,10 @@
 
  Una vez que la aplicación inició, se queda escuchando eventos del navegador, como clicks del mouse, teclas que se presionan o mensajes de servidores remotos. Si dichos eventos cambian el modelo, Angular se encarga de refrescar la vista usando los bindings.
 
+## Cómo quedó?
+
+<script async src="//jsfiddle.net/germanio/4y93nzxh/embed/html,result/"> </script>
+
 ## Paso 4: ahora te toca a vos!
 
  Probá de agregar un nuevo binding con la expresión que vos quieras. Por ejemplo, la suma de dos números:
