@@ -70,7 +70,9 @@
 
 ## Cómo quedó?
 
-<script async src="//jsfiddle.net/germanio/4y93nzxh/embed/html,result/"> </script>
+ Esta es una versión simplificada que jsfiddle nos muestra en vivo, corriendo en nuestra propia página. Decimos simplificada porque quitamos el `head` y las referencias a las librerías del `html`.
+
+<script async src="//jsfiddle.net/germanio/4y93nzxh/2/embed/html,result/"> </script>
 
 ## Paso 4: ahora te toca a vos!
 
