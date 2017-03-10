@@ -191,7 +191,7 @@
 
 ## Cómo quedó?
 
-<script async src="//jsfiddle.net/germanio/4y93nzxh/3/embed/html,result/"> </script>
+<script async src="//jsfiddle.net/germanio/4y93nzxh/4/embed/js,html,result/"> </script>
 
 ## Paso 4: ahora te toca a vos!
 
