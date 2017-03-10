@@ -1,8 +1,8 @@
-theme: jekyll-theme-cayman
 title : Tutorial introductorio a AngularJS 1.x
 tagline: creado por Germán Hohmann para Programá Tu Futuro
 author :
-	name : Germán Hohmann
-	email : german.hohmann@gmail.com
-	github : https://github.com/germanio
-	twitter : https://twitter.com/GerHohmann
+  name : Germán Hohmann
+  email : german.hohmann@gmail.com
+  github : https://github.com/germanio
+  twitter : https://twitter.com/GerHohmann
+theme: jekyll-theme-cayman
