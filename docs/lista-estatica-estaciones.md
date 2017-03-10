@@ -191,7 +191,9 @@
 
 ## Cómo quedó?
 
-<script async src="//jsfiddle.net/germanio/4y93nzxh/4/embed/js,html,result/"> </script>
+ De nuevo, vamos a usar jsFiddle para mostrar el código corriendo. Tiene algunas simplificaciones en el html, y estamos metiendo todo el código javascript que tenemos en la solapa de Javascript para que se pueda ver.
+ 
+<script async src="//jsfiddle.net/germanio/4y93nzxh/7/embed/js,html,result/"> </script>
 
 ## Paso 4: ahora te toca a vos!
 
