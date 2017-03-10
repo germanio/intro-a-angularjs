@@ -127,6 +127,10 @@
 
  Nótese que en ningún momento usamos `new` para crear ni servicios, ni controladores, ni nada.
 
+## Cómo quedó?
+
+<script async src="//jsfiddle.net/germanio/4y93nzxh/10/embed/js,html,result/"> </script>
+
 ## Paso 4: ahora te toca a vos!
 
 1. Ejercicio: Estaría buenísimo tener un componente para mostrar una única estación, que se pueda usar dentro del `ngRepeat`. Para eso, vas a necesitar revisar la [documentación del sitio oficial](https://code.angularjs.org/1.6.2/docs/guide/component).
