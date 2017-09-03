@@ -123,12 +123,14 @@
  Para que funcione correctamente, hay que tener un servidor http corriendo, sirviendo la ruta del proyecto. Esto no es para nada difícil y cualquier servidor http sirve (Apache, Python, NodeJS entre otros ofrecen éste tipo de servidores). Por ejemplo, el de NodeJS (`http-server`) puede ser usado así:
 
  Instalación (asumiendo que NodeJS ya está instalado)
-    npm install http-server -g
+ 
+        npm install http-server -g
 
  Ejecución
-    http-server /ruta/del/proyecto/public/html
+ 
+        http-server /ruta/del/proyecto/public/html
 
- Con ésto ya podemos acceder a http://127.0.0.1:8080 para poder ver nuestra aplicación funcionando.
+ Con ésto ya podemos acceder a ![http://127.0.0.1:8080](http://127.0.0.1:8080) para poder ver nuestra aplicación funcionando.
 
 ## Un poco de estilo, por favor
 

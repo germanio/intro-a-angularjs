@@ -5,7 +5,7 @@
     <input ng-model="$ctrl.busqueda" type="text" class="form-control" placeholder="Buscar...">
 </div>
 <ul class="list-group">
-    <li ng-repeat="estacion in $ctrl.estaciones | filter: $ctrl.busqueda" class="list-group-item">
+    <li ng-repeat="estacion in $ctrl.estaciones | porEstacion: $ctrl.busqueda" class="list-group-item">
         <h4 class="list-group-item-heading">
             {{estacion.EstacionNombre}}
             <small>ID: {{estacion.EstacionId}}</small>
