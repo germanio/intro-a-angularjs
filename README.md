@@ -27,6 +27,14 @@
  En cada capítulo vamos a tener una versión andando de la aplicación, donde le vamos a ir agregando funcionalidades nuevas y explicando conceptos de cómo funciona AngularJS y para qué.
  Como en cada capítulo vamos a tener una versión distinta de nuestra aplicación, el código de cada uno está en un [branch distinto](https://github.com/germanio/intro-a-angularjs/branches) para que puedan bajarlo y jugar con él.
 
+ <!-- Vamos a desarrollar desde cero una aplicación que nos muestre información sobre las estaciones de Ecobici con las siguientes características:
+
+- Usar los datos abiertos del Gobierno de la Ciudad de Buenos Aires para traer información actualizada de las estaciones
+- Lista de estaciones, que puede filtrarse y ordenarse
+- Las tres estaciones más cercanas a una posición dada por latitud y longitud
+- Mostrar las estaciones en un mapa
+- Guardar las estaciones favoritas del usuario en el navegador -->
+
  Por simplicidad, la aplicación va a constar sólo del _frontend_ (código que se usa del lado del usuario), para que sea más fácil de entender y desarrollar, sin tener que meternos en temas como Bases de Datos o lenguajes y herramientas para desarrollo del _backend_ (código que se usa del lado del servidor, donde usualmente se almacenan y procesan datos y se interactúa con otros sistemas).
 
 ### Contenidos
@@ -38,7 +46,12 @@
 1. [Más Mejoras](./docs/mejoras-ui.html) (Repaso, modularización de templates y servidor web local)
 1. [Ver detalles de una estación](./docs/detalles-estacion.html) (Multiples _Views_ y uso de _ngRoute_)
 1. [Ahora usemos datos reales](./docs/datos-reales.html) (Uso del servicio _$http_)
+1. [Filtramos y ordenamos las estaciones](./docs/filtros-y-orden.html) (_Filters_ y data binding)
+<!-- 1. [Las estaciones más cercanas](./docs/estaciones-cercanas.html) (filtros a medida e _Event Handlers_)
+1. [Mis estaciones favoritas](./docs/estaciones-favoritas.html) (Persistencia en el navegador y librerías de terceros - 1ra parte)
+1. [Más visual, mostremos las estaciones en un mapa](./docs/mapa.html) (librerías de terceros - 3ra parte e introducción a directivas) -->
 1. [Conclusión](./docs/conclusion.html)
+
 
 ## Referencias
 
@@ -46,3 +59,5 @@
 - Tutorial oficial de AngularJS 1.x: https://docs.angularjs.org/tutorial
 - Bootstrap: http://getbootstrap.com/getting-started/
 - API Ecobici: https://recursos-data.buenosaires.gob.ar/ckan2/ecobici/estado-ecobici.xml
+<!-- - ngStorage: https://github.com/gsklee/ngStorage
+- Leaflet: http://tombatossals.github.io/angular-leaflet-directive/#!/examples/marker -->
