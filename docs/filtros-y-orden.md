@@ -9,16 +9,18 @@
  Si queremos buscar por texto y listar sólo aquellas estaciones que cumplen con ciertas palabras, AngularJS ofrece una funcionalidad muy potente: los filtros de ngRepeat.
  Para implementarlo, especificamos un filtro en el template de la lista de estaciones, de ésta forma:
 
+```javascript
         ng-repeat="estacion in $ctrl.estaciones | filter: $ctrl.busqueda"
+```
 
  Y después agregamos en el template un input html asociado al modelo `$ctrl.busqueda` del componente.
 
-        <div class="input-group" style="padding-bottom: 9px; border-bottom: 1px solid #eee; margin-bottom: 9px;">
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            </span>
-            <input ng-model="$ctrl.busqueda" type="text" class="form-control" placeholder="Buscar...">
-        </div>
+    <div class="input-group" style="padding-bottom: 9px; border-bottom: 1px solid #eee; margin-bottom: 9px;">
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
+        <input ng-model="$ctrl.busqueda" type="text" class="form-control" placeholder="Buscar...">
+    </div>
 
  Entonces, cada vez que el usuario modifique el contenido del input, como Angular tiene un binding entre el input html y el modelo y éste es usado para filtrar el ngRepear, se va a recorrer la lista de estaciones y usar el contenido del input para dejar sólo aquellas estaciones que tengan un texto que cumpla con el mismo. Esto hace que la búsqueda y filtrado sea muy fácil de hacer.
  
@@ -56,6 +58,7 @@
  
  AngularJS brinda la posibilidad de incorporar nuestros propios filtros. En nuestro caso, tenemos que implementar un nuevo archivo javascript (`app/estacion.filter.js`) con lo siguiente:
  
+```javascript
         angular.
           module('ptfApp').
           filter('porEstacion', function() {
@@ -83,19 +86,25 @@
                 return estacionesFiltradas;
             };
           });
+```
  
  En el módulo `ptfApp`, creamos un `filter`: le definimos el nombre y simplemente le asociamos una función, que es la encargada de instanciar el filtro. El filtro no es más ni menos que otra función javascript, que recibe el array con las estaciones y la consulta que el usuario está haciendo en ese momento (o sea, el contenido de `$ctrl.busqueda`).
   Es interesante notar que el filtro puede o no recibir parámetros desde el template. En éste caso recibe la consulta del usuario, para poder comparar. Y para hacerlo se usa la siguiente sintaxis:
         
+```javascript
         ng-repeat="elemento in listaElementos | miFiltro:parametro1:parametro2:..."
- 
+```
+
  No hay que olvidarse que también hay que modificar el template para usar nuestro filtro:
  
+```javascript
         ng-repeat="estacion in $ctrl.estaciones | porEstacion: $ctrl.busqueda"
-        
+```
+
  Y agregar la referencia al nuevo archivo (`app/estacion.filter.js`) en el `index.html`. Sino no va a funcionar.
 
  Nota: Es posible aplicar filtros a modelos que no sean arrays, fuera del ngRepeat, así como también concatenar filtros.
+ 
  
  ## Ahora te toca a vos!
 
