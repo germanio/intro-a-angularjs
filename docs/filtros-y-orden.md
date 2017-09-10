@@ -106,7 +106,7 @@
  Nota: Es posible aplicar filtros a modelos que no sean arrays, fuera del ngRepeat, así como también concatenar filtros.
  
  
- ## Ahora te toca a vos!
+## Ahora te toca a vos!
 
 1. Ejercicio: Modificá el filtro para poder buscar independientemente si se usa mayúsculas/minúsculas.
 1. Ejercicio: Aplicá un filtro al campo de nombre en el template, para pasarlos a mayúsculas. Ejemplo: `Retiro` pasaría a mostrarse como `RETIRO`. 
