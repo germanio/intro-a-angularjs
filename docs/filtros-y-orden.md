@@ -105,7 +105,7 @@
 
  Nota: Es posible aplicar filtros a modelos que no sean arrays, fuera del ngRepeat, así como también concatenar filtros.
  
- ## Paso 3: Ordenemos los resultados
+## Paso 3: Ordenemos los resultados
  
  Otra funcionalidad que nos pueden proveer los filtros es la de ordenar los resultados, incluso habiéndolos filtrado antes, dado que los filtros no son ni más ni menos que funciones que se aplican una detrás de la otra, sobre cierta colección de objetos.
  Para hacer las cosas fáciles, AngularJS incluso provee un filtro para ordenar que es bastante genérico, donde sólo le tenemos que indicar qué atributo de los objetos del array debe usar para comparar.
@@ -113,30 +113,30 @@
  Esto lo podemos hacer encadenando el filtro al ngRepeat así:
  
 ```javascript
-        ng-repeat="estacion in $ctrl.estaciones | porEstacion: $ctrl.busqueda | orderBy : 'EstacionNombre'"
+ ng-repeat="estacion in $ctrl.estaciones | porEstacion: $ctrl.busqueda | orderBy : 'EstacionNombre'"
 ```
  
  Pero acá sólo estaríamos ordenando por nombre. Así que lo que tenemos que hacer es usar el modelo, y cambiar el contenido del mismo con un `<input>` para que el usuario pueda hacerlo. Entonces agregamos lo siguiente al template:
  
  ``` html
-        <div class="radio-inline">
-          <label>
-            <input type="radio" ng-model="$ctrl.orden" name="optionsRadios" id="opcionNombre" value="EstacionNombre" checked>
-            Ordenar por nombre
-          </label>
-        </div>
-        <div class="radio-inline">
-          <label>
-            <input type="radio" ng-model="$ctrl.orden" id="opcionDireccion" value="Lugar">
-            Ordenar por dirección
-          </label>
-        </div>
+ <div class="radio-inline">
+   <label>
+     <input type="radio" ng-model="$ctrl.orden" name="optionsRadios" id="opcionNombre" value="EstacionNombre" checked>
+     Ordenar por nombre
+   </label>
+ </div>
+ <div class="radio-inline">
+   <label>
+     <input type="radio" ng-model="$ctrl.orden" id="opcionDireccion" value="Lugar">
+     Ordenar por dirección
+   </label>
+ </div>
 ```
 
  Para cargar en `$ctrl.orden` el nombre del atributo de la estación (`EstacionNombre` o `Lugar`) que después vamos a usarlo en el ngRepeat:
  
 ```javascript
-        ng-repeat="estacion in $ctrl.estaciones | porEstacion: $ctrl.busqueda | orderBy : $ctrl.orden"
+ ng-repeat="estacion in $ctrl.estaciones | porEstacion: $ctrl.busqueda | orderBy : $ctrl.orden"
 ```
 
  Ahora, si filtramos la búsqueda y ordenamos por Nombre:
