@@ -9,16 +9,18 @@
  Si queremos buscar por texto y listar sólo aquellas estaciones que cumplen con ciertas palabras, AngularJS ofrece una funcionalidad muy potente: los filtros de ngRepeat.
  Para implementarlo, especificamos un filtro en el template de la lista de estaciones, de ésta forma:
 
+```javascript
         ng-repeat="estacion in $ctrl.estaciones | filter: $ctrl.busqueda"
+```
 
  Y después agregamos en el template un input html asociado al modelo `$ctrl.busqueda` del componente.
 
-        <div class="input-group" style="padding-bottom: 9px; border-bottom: 1px solid #eee; margin-bottom: 9px;">
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-            </span>
-            <input ng-model="$ctrl.busqueda" type="text" class="form-control" placeholder="Buscar...">
-        </div>
+    <div class="input-group" style="padding-bottom: 9px; border-bottom: 1px solid #eee; margin-bottom: 9px;">
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
+        <input ng-model="$ctrl.busqueda" type="text" class="form-control" placeholder="Buscar...">
+    </div>
 
  Entonces, cada vez que el usuario modifique el contenido del input, como Angular tiene un binding entre el input html y el modelo y éste es usado para filtrar el ngRepear, se va a recorrer la lista de estaciones y usar el contenido del input para dejar sólo aquellas estaciones que tengan un texto que cumpla con el mismo. Esto hace que la búsqueda y filtrado sea muy fácil de hacer.
  
@@ -56,6 +58,7 @@
  
  AngularJS brinda la posibilidad de incorporar nuestros propios filtros. En nuestro caso, tenemos que implementar un nuevo archivo javascript (`app/estacion.filter.js`) con lo siguiente:
  
+```javascript
         angular.
           module('ptfApp').
           filter('porEstacion', function() {
@@ -83,23 +86,71 @@
                 return estacionesFiltradas;
             };
           });
+```
  
  En el módulo `ptfApp`, creamos un `filter`: le definimos el nombre y simplemente le asociamos una función, que es la encargada de instanciar el filtro. El filtro no es más ni menos que otra función javascript, que recibe el array con las estaciones y la consulta que el usuario está haciendo en ese momento (o sea, el contenido de `$ctrl.busqueda`).
   Es interesante notar que el filtro puede o no recibir parámetros desde el template. En éste caso recibe la consulta del usuario, para poder comparar. Y para hacerlo se usa la siguiente sintaxis:
         
+```javascript
         ng-repeat="elemento in listaElementos | miFiltro:parametro1:parametro2:..."
- 
+```
+
  No hay que olvidarse que también hay que modificar el template para usar nuestro filtro:
  
+```javascript
         ng-repeat="estacion in $ctrl.estaciones | porEstacion: $ctrl.busqueda"
-        
+```
+
  Y agregar la referencia al nuevo archivo (`app/estacion.filter.js`) en el `index.html`. Sino no va a funcionar.
 
  Nota: Es posible aplicar filtros a modelos que no sean arrays, fuera del ngRepeat, así como también concatenar filtros.
  
- ## Ahora te toca a vos!
+ ## Paso 3: Ordenemos los resultados
+ 
+ Otra funcionalidad que nos pueden proveer los filtros es la de ordenar los resultados, incluso habiéndolos filtrado antes, dado que los filtros no son ni más ni menos que funciones que se aplican una detrás de la otra, sobre cierta colección de objetos.
+ Para hacer las cosas fáciles, AngularJS incluso provee un filtro para ordenar que es bastante genérico, donde sólo le tenemos que indicar qué atributo de los objetos del array debe usar para comparar.
+ Dicho filtro se llama `orderBy` y nosotros lo vamos a usar para ordenar por nombre y dirección de las estaciones.
+ Esto lo podemos hacer encadenando el filtro al ngRepeat así:
+ 
+```javascript
+        ng-repeat="estacion in $ctrl.estaciones | porEstacion: $ctrl.busqueda | orderBy : 'EstacionNombre'"
+```
+ 
+ Pero acá sólo estaríamos ordenando por nombre. Así que lo que tenemos que hacer es usar el modelo, y cambiar el contenido del mismo con un `<input>` para que el usuario pueda hacerlo. Entonces agregamos lo siguiente al template:
+ 
+ ``` html
+        <div class="radio-inline">
+          <label>
+            <input type="radio" ng-model="$ctrl.orden" name="optionsRadios" id="opcionNombre" value="EstacionNombre" checked>
+            Ordenar por nombre
+          </label>
+        </div>
+        <div class="radio-inline">
+          <label>
+            <input type="radio" ng-model="$ctrl.orden" id="opcionDireccion" value="Lugar">
+            Ordenar por dirección
+          </label>
+        </div>
+```
+
+ Para cargar en `$ctrl.orden` el nombre del atributo de la estación (`EstacionNombre` o `Lugar`) que después vamos a usarlo en el ngRepeat:
+ 
+```javascript
+        ng-repeat="estacion in $ctrl.estaciones | porEstacion: $ctrl.busqueda | orderBy : $ctrl.orden"
+```
+
+ Ahora, si filtramos la búsqueda y ordenamos por Nombre:
+
+![Orden por Nombre](https://raw.githubusercontent.com/germanio/intro-a-angularjs/master/docs/capturas/filtro-ordenamiento-nombre.png)
+
+ Y si ordenamos por Dirección:
+ 
+ ![Orden por Dirección](https://raw.githubusercontent.com/germanio/intro-a-angularjs/master/docs/capturas/filtro-ordenamiento-lugar.png)
+
+## Ahora te toca a vos!
 
 1. Ejercicio: Modificá el filtro para poder buscar independientemente si se usa mayúsculas/minúsculas.
-1. Ejercicio: Aplicá un filtro al campo de nombre en el template, para pasarlos a mayúsculas. Ejemplo: `Retiro` pasaría a mostrarse como `RETIRO`. 
+1. Ejercicio: Aplicá un filtro al campo de nombre en el template, para pasarlos a mayúsculas. Ejemplo: `Retiro` pasaría a mostrarse como `RETIRO`.
+1. Ejercicio: Modificá el filtro de ordenamiento para que el usuario pueda invertir el sentido del orden (ascendente/descendente). 
  
  

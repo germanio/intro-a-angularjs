@@ -7,6 +7,8 @@ angular.
     controller: ['Estacion', function EstacionesController(Estacion) {
         var self = this;
         self.estaciones = [];
+        self.busqueda = '';
+        
         Estacion.obtenerTodos(function(estaciones) {
             self.estaciones = estaciones;
         });

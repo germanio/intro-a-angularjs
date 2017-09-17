@@ -1,11 +1,25 @@
-<div class="input-group" style="padding-bottom: 9px; border-bottom: 1px solid #eee; margin-bottom: 9px;">
-    <span class="input-group-addon">
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-    </span>
-    <input ng-model="$ctrl.busqueda" type="text" class="form-control" placeholder="Buscar...">
+<div style="padding-bottom: 9px; border-bottom: 1px solid #eee; margin-bottom: 9px;">
+    <div class="input-group" style="padding-bottom: 9px;">
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
+        <input ng-model="$ctrl.busqueda" type="text" class="form-control" placeholder="Buscar...">
+    </div>
+    <div class="radio-inline">
+      <label>
+        <input type="radio" ng-model="$ctrl.orden" name="optionsRadios" id="opcionNombre" value="EstacionNombre" checked>
+        Ordenar por nombre
+      </label>
+    </div>
+    <div class="radio-inline">
+      <label>
+        <input type="radio" ng-model="$ctrl.orden" id="opcionDireccion" value="Lugar">
+        Ordenar por dirección
+      </label>
+    </div>
 </div>
 <ul class="list-group">
-    <li ng-repeat="estacion in $ctrl.estaciones | porEstacion: $ctrl.busqueda" class="list-group-item">
+    <li ng-repeat="estacion in $ctrl.estaciones | porEstacion: $ctrl.busqueda | orderBy : $ctrl.orden" class="list-group-item">
         <h4 class="list-group-item-heading">
             {{estacion.EstacionNombre}}
             <small>ID: {{estacion.EstacionId}}</small>
