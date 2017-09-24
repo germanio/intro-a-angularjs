@@ -11,10 +11,10 @@ angular.
     return function(estaciones) {
         var estacionesFiltradas = [];
         
-        //coordenadas del obelisco
+        //coordenadas a Plaza Houssay, sacadas de Google Maps
         var centro_coords = {
-            latitud: -34.6033,
-            longitud: -58.3816
+            latitud: -34.5989141,
+            longitud: -58.3999595
         };
         
         //distancia máxima en metros
