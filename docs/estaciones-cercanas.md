@@ -19,7 +19,7 @@
  
  ![Mapa de estaciones](https://raw.githubusercontent.com/germanio/intro-a-angularjs/master/docs/capturas/filtro-proximidad-mapa.png)
  
-## Paso 2: Resolución, parte I
+## Paso 2: Filtramos y ordenamos
 
  Por nuestro análisis, tenemos que implementar lo siguiente:
  
@@ -106,6 +106,32 @@ Las funciones auxiliares `calcular_distancia()` y `radianes_a_metros()` son así
     }
 ```
  
+ Con el filtro implementado, ahora sólo queda usarlo en el template:
+
+```html
+    <li ng-repeat="estacion in $ctrl.estaciones | porProximidad | porEstacion: $ctrl.busqueda | orderBy : $ctrl.orden" class="list-group-item">
+        <h4 class="list-group-item-heading">
+            {{estacion.EstacionNombre}}
+            <small>ID: {{estacion.EstacionId}}</small>
+        </h4>
+        <p>
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+            {{estacion.Lugar}}
+        </p>
+        <p><small>Distancia al centro: {{estacion.distancia}} metros</small></p>
+        <a type="button" class="btn btn-primary" href="#!/estaciones/{{estacion.EstacionId}}">Ver Detalle</a>
+    </li>
+```
+ 
+ El primer filtro que agregamos va a ser el de proximidad, para poder usar los otros encima de ése.
+ También agregamos un pequeño párrafo para mostrar la distancia al centro en metros.
+ 
+## Parte 2: Los datos del usuario
+
+## Parte 3: Filtremos cuando el usuario quiera
+
+## Ahora te toca a vos!
+
  (1) Digo *de forma muy simplificada* porque estoy simplificando los cálculos de geolocalización para que sea más fácil de entender, implementar y el código además sea más o menos simple. Si se quiere que el resultado sea preciso, hay que usar otros algoritmos y tomar otras hipótesis.
  
  Por ejemplo, consideramos la línea recta entre la estación y el centro como la distancia entre ambas, aunque el usuario en realidad no va a poder caminar directamente atravezando en diagonal las cuadras, sino doblando en las esquinas. Ésto lo hacemos porque simplifica mucho el filtrado: si tomamos las cuadras y las calles que debe recorrer el usuario, deberíamos tener en cuenta el diseño de las mismas para hacer los cálculos de las distancias mínimas (porque puede haber varios caminos para llegar entre un punto y otro). Para ésto necesitamos técnicas más complejas y mucha más información urbanística.
