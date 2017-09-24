@@ -2,22 +2,27 @@ angular.
   module('ptfApp').
   filter('porProximidad', function() {
     
-    function radianes_a_metros(coordenadas){
-        const RAD = 0.000008998719243599958;
+    //`coordenadas` es un objeto que tiene latitud y longitud como atributos, con valores en radianes
+    function calcular_distancia(coordenadas){
         //calculamos la distancia al centro usando pitágoras
-        return Math.round(Math.sqrt(Math.pow(coordenadas.latitud, 2) + Math.pow(coordenadas.longitud, 2)) / RAD);
+        return Math.sqrt(Math.pow(coordenadas.latitud, 2) + Math.pow(coordenadas.longitud, 2));
+    }
+    
+    function radianes_a_metros(radian){
+        const RAD = 0.000008998719243599958;
+        return Math.round(radian / RAD);
     }
     
     return function(estaciones) {
         var estacionesFiltradas = [];
         
-        //coordenadas a Plaza Houssay, sacadas de Google Maps
+        //ATENCION: coordenadas a Plaza Houssay, sacadas de Google Maps
         var centro_coords = {
             latitud: -34.5989141,
             longitud: -58.3999595
         };
         
-        //distancia máxima en metros
+        //ATENCION: distancia máxima en metros
         var distanciaMaxima = 1000;
         
         //recorremos las estaciones para ver cual se queda y cual se va
@@ -28,16 +33,20 @@ angular.
                 longitud: parseFloat(estacion.Longitud)
             };
             
-            var distancia = radianes_a_metros({
+            //armamos un objeto donde la latitud y longitud son la diferencia entre el centro y la estación
+            var distancia_rad = calcular_distancia({
                 latitud: centro_coords.latitud - estacion_coords.latitud,
                 longitud: centro_coords.longitud - estacion_coords.longitud
             });
             
-            //éste valor debe ser menor que el cuadrado de la distancia máxima
+            //después pasamos de radianes a metros
+            var distancia = radianes_a_metros(distancia_rad);
+            
+            //éste valor debe ser menor que la distancia máxima
             if (distanciaMaxima > distancia) {
                 estacionesFiltradas.push(estacion);
                 
-                //guardamos la distancia entre el centro y la estación para poder ordenar por proximidad
+                //guardamos la distancia para poder ordenar por proximidad
                 estacion.distancia = distancia;
             }
         });

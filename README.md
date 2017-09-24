@@ -47,7 +47,7 @@
 1. [Ver detalles de una estación](./docs/detalles-estacion.html) (Multiples _Views_ y uso de _ngRoute_)
 1. [Ahora usemos datos reales](./docs/datos-reales.html) (Uso del servicio _$http_)
 1. [Filtramos y ordenamos las estaciones](./docs/filtros-y-orden.html) (_Filters_ y data binding)
-1. [Las estaciones más cercanas](./docs/estaciones-cercanas.html) (_Event Handlers_ y más sobre filtros a medida)
+1. [Las estaciones más cercanas](./docs/estaciones-cercanas.html) (_Análisis de una funcionalidad_ y más sobre filtros a medida)
 1. [Conclusión](./docs/conclusion.html)
 
 <!---  
