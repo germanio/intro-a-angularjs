@@ -13,17 +13,16 @@ angular.
         return Math.round(radian / RAD);
     }
     
-    return function(estaciones) {
+    return function(estaciones, activarFiltro, centro_coords, distanciaMaxima) {
         var estacionesFiltradas = [];
         
-        //ATENCION: coordenadas a Plaza Houssay, sacadas de Google Maps
-        var centro_coords = {
-            latitud: -34.5989141,
-            longitud: -58.3999595
-        };
+        if ( !activarFiltro ){
+            return estaciones;
+        }
         
-        //ATENCION: distancia máxima en metros
-        var distanciaMaxima = 1000;
+        if ( centro_coords.latitud == undefined || centro_coords.longitud == undefined ){
+            return estaciones;
+        }
         
         //recorremos las estaciones para ver cual se queda y cual se va
         angular.forEach(estaciones, function(estacion) {

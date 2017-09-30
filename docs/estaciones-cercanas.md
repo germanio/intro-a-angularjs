@@ -126,9 +126,81 @@ Las funciones auxiliares `calcular_distancia()` y `radianes_a_metros()` son así
 
 ## Parte 2: Los datos del usuario
 
-## Parte 3: Filtremos cuando el usuario quiera
+ Es hora de tomar los datos de la ubicación del usuario y qué distancia máxima está dispuesto a recorrer.
+ 
+### Geolocalización
 
+ No hace falta preguntarle al usuario dónde está, su navegador lo sabe con bastante precisión. Para obtener los datos del navegador, hay que usar la API del navegador para obtener la geolocalización.
+ 
+```javascript
+    navigator.geolocation.getCurrentPosition(function(posicion){
+    
+        //hacer algo con la posición
+    
+    }
+```
+ 
+### Distancia máxima
+
+ La distancia máxima ahora se la vamos a pedir al usuario modificando el template para ello:
+ 
+```html
+    <div class="input-group">
+        <span class="input-group-addon">
+            Filtrar por proximidad? <input type="checkbox" aria-label="..." ng-model="$ctrl.filtrarPorProximidad">
+        </span>
+        <input type="text" class="form-control" aria-label="..." placeholder="filtrar en un radio en metros de..." ng-model="$ctrl.distanciaMaxima">
+    </div>
+```
+
+ También le vamos a permitir al usuario que active/desactive la búsqueda de estaciones cercanas, porque no necesariamente siempre va a querer buscar así. Eso lo hacemos con `ctrl.filtrarPorProximidad`. Después con `$ctrl.distanciaMaxima` guardamos lo que el usuario ingrese para usarlo como distancia máxima en el filtro.
+ 
+ Todo ésto ahora lo pasamos al filtro desde el template así:
+
+```javascript
+    porProximidad:$ctrl.filtrarPorProximidad:$ctrl.posicion:$ctrl.distanciaMaxima
+```
+
+ Y en el filtro lo recibimos así:
+
+```javascript
+    // ésta es la función que devuelve el filtro
+    
+    return function(estaciones, activarFiltro, centro_coords, distanciaMaxima) {
+        var estacionesFiltradas = [];
+    
+        // acá validamos si el filtro está activo, mapea con $ctrl.filtrarPorProximidad
+        
+        if ( !activarFiltro ){
+            return estaciones;
+        }
+        
+        // acá validamos que realmente tengamos las coordenadas del usuario
+        
+        if ( centro_coords.latitud == undefined || centro_coords.longitud == undefined ){
+            return estaciones;
+        }
+        
+        //recorremos las estaciones para ver cual se queda y cual se va
+        angular.forEach(estaciones, function(estacion) {
+        ...
+        ...
+        
+```
+
+ Nótese que borramos del filtro las coordenadas y la distancia máxima que habíamos hardcodeado en el paso anterior.
+ 
+ Como último detalle, usamos la directiva ngShow para mostrar/ocultar la distancia de las estaciones según se active o no el filtro:
+ 
+```html
+    <p ng-show="$ctrl.filtrarPorProximidad"><small>Distancia al centro: {{estacion.distancia | number:0}} metros</small></p>
+```
+ 
 ## Ahora te toca a vos!
+
+1. Ejercicio: Si se elije ordenar por nombre o dirección cuando se está filtrando por proximidad, no se puede volver a ordenar por distancia. Actualizar la lista de radio buttons agregando una nueva opción para que, si está seleccionado el filtro por proximidad, se pueda elegir ordenar por distancia.
+1. Ejercicio: Modificar la forma en que se muestra la distancia de las estaciones para que el usuario pueda elegir entre metros o kilómetros.
+
 
  (1) Digo *de forma muy simplificada* porque estoy simplificando los cálculos de geolocalización para que sea más fácil de entender, implementar y el código además sea más o menos simple. Si se quiere que el resultado sea preciso, hay que usar otros algoritmos y tomar otras hipótesis.
  

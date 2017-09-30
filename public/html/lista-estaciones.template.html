@@ -17,9 +17,15 @@
         Ordenar por dirección
       </label>
     </div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            Filtrar por proximidad? <input type="checkbox" aria-label="..." ng-model="$ctrl.filtrarPorProximidad">
+        </span>
+        <input type="text" class="form-control" aria-label="..." placeholder="filtrar en un radio en metros de..." ng-model="$ctrl.distanciaMaxima">
+    </div>
 </div>
 <ul class="list-group">
-    <li ng-repeat="estacion in $ctrl.estaciones | porProximidad | porEstacion: $ctrl.busqueda | orderBy : $ctrl.orden" class="list-group-item">
+    <li ng-repeat="estacion in $ctrl.estaciones | porProximidad:$ctrl.filtrarPorProximidad:$ctrl.posicion:$ctrl.distanciaMaxima | porEstacion: $ctrl.busqueda | orderBy : $ctrl.orden" class="list-group-item">
         <h4 class="list-group-item-heading">
             {{estacion.EstacionNombre}}
             <small>ID: {{estacion.EstacionId}}</small>
@@ -28,7 +34,7 @@
             <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
             {{estacion.Lugar}}
         </p>
-        <p><small>Distancia al centro: {{estacion.distancia | number:0}} metros</small></p>
+        <p ng-show="$ctrl.filtrarPorProximidad"><small>Distancia al centro: {{estacion.distancia | number:0}} metros</small></p>
         <a type="button" class="btn btn-primary" href="#!/estaciones/{{estacion.EstacionId}}">Ver Detalle</a>
     </li>
 </ul>
