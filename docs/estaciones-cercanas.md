@@ -23,12 +23,13 @@
 
  Por nuestro análisis, tenemos que implementar lo siguiente:
  
+ 1. calcular la `distancia` entre las estaciones y el `centro`, para todas las estaciones.
  1. filtrar por la `distancia` de cada estación al `centro`, descartando aquellas que están más allá de `distanciaMaxima`.
  1. ordenar las estaciones filtradas, también por la `distancia`.
  1. mostrar la distancia en metros al usuario (así sabe cuanto tiene que recorrer para llegar a cada una).
  
  Vamos a empezar por la primera parte, fijando la distancia máxima en 1000 metros y nuestra ubicación en Plaza Houssay. 
- Después vamos a permitir cambiar la distancia máxima al usuario y vamos a ver cómo obtener nuestra ubicación dinámicamente. 
+ Nota: Después vamos a permitir cambiar la distancia máxima al usuario y vamos a ver cómo obtener nuestra ubicación dinámicamente. 
  
  Creamos un nuevo filtro, llamado `proximidad.filter.js` (por ahora vacío) que va a filtrar y ordenar, todo al mismo tiempo:
  
@@ -69,16 +70,13 @@
         };
 
         //armamos un objeto donde la latitud y longitud son la diferencia entre el centro y la estación
-        var distancia_rad = calcular_distancia({
-            latitud: centro_coords.latitud - estacion_coords.latitud,
-            longitud: centro_coords.longitud - estacion_coords.longitud
+        var distancia = calcular_distancia({
+            latitud: radianes_a_metros(centro_coords.latitud) - radianes_a_metros(estacion_coords.latitud),
+            longitud: radianes_a_metros(centro_coords.longitud) - radianes_a_metros(estacion_coords.longitud)
         });
 
-        //después pasamos de radianes a metros
-        var distancia = radianes_a_metros(distancia_rad);
-
         //éste valor debe ser menor que la distancia máxima
-        if (distanciaMaxima > distancia) {
+        if (distancia < distanciaMaxima) {
             estacionesFiltradas.push(estacion);
 
             //guardamos la distancia para poder ordenar por proximidad
@@ -94,7 +92,7 @@
 Las funciones auxiliares `calcular_distancia()` y `radianes_a_metros()` son así:
 
 ```javascript
-    //`coordenadas` es un objeto que tiene latitud y longitud como atributos, con valores en radianes
+    //`coordenadas` es un objeto que tiene `latitud` y `longitud` como atributos, con valores en radianes
     function calcular_distancia(coordenadas){
         //calculamos la distancia al centro usando pitágoras
         return Math.sqrt(Math.pow(coordenadas.latitud, 2) + Math.pow(coordenadas.longitud, 2));
@@ -118,14 +116,14 @@ Las funciones auxiliares `calcular_distancia()` y `radianes_a_metros()` son así
             <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
             {{estacion.Lugar}}
         </p>
-        <p><small>Distancia al centro: {{estacion.distancia}} metros</small></p>
+        <p><small>Distancia al centro: {{estacion.distancia | number:0}} metros</small></p>
         <a type="button" class="btn btn-primary" href="#!/estaciones/{{estacion.EstacionId}}">Ver Detalle</a>
     </li>
 ```
  
  El primer filtro que agregamos va a ser el de proximidad, para poder usar los otros encima de ése.
- También agregamos un pequeño párrafo para mostrar la distancia al centro en metros.
- 
+ También agregamos un pequeño párrafo para mostrar la distancia al centro en metros, usando el filtro `number` para no mostrar los decimales.
+
 ## Parte 2: Los datos del usuario
 
 ## Parte 3: Filtremos cuando el usuario quiera

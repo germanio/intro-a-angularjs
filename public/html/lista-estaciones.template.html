@@ -28,7 +28,7 @@
             <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
             {{estacion.Lugar}}
         </p>
-        <p><small>Distancia al centro: {{estacion.distancia}} metros</small></p>
+        <p><small>Distancia al centro: {{estacion.distancia | number:0}} metros</small></p>
         <a type="button" class="btn btn-primary" href="#!/estaciones/{{estacion.EstacionId}}">Ver Detalle</a>
     </li>
 </ul>

@@ -34,16 +34,13 @@ angular.
             };
             
             //armamos un objeto donde la latitud y longitud son la diferencia entre el centro y la estación
-            var distancia_rad = calcular_distancia({
-                latitud: centro_coords.latitud - estacion_coords.latitud,
-                longitud: centro_coords.longitud - estacion_coords.longitud
+            var distancia = calcular_distancia({
+                latitud: radianes_a_metros(centro_coords.latitud) - radianes_a_metros(estacion_coords.latitud),
+                longitud: radianes_a_metros(centro_coords.longitud) - radianes_a_metros(estacion_coords.longitud)
             });
             
-            //después pasamos de radianes a metros
-            var distancia = radianes_a_metros(distancia_rad);
-            
             //éste valor debe ser menor que la distancia máxima
-            if (distanciaMaxima > distancia) {
+            if (distancia < distanciaMaxima) {
                 estacionesFiltradas.push(estacion);
                 
                 //guardamos la distancia para poder ordenar por proximidad
