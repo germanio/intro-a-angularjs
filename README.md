@@ -48,10 +48,10 @@
 1. [Ahora usemos datos reales](./docs/datos-reales.html) (Uso del servicio _$http_)
 1. [Filtramos y ordenamos las estaciones](./docs/filtros-y-orden.html) (_Filters_ y data binding)
 1. [Las estaciones más cercanas](./docs/estaciones-cercanas.html) (_Análisis de una funcionalidad_ y más sobre filtros a medida)
+1. [Mis estaciones favoritas](./docs/estaciones-favoritas.html) (Persistencia en el navegador y librerías de terceros - 1ra parte)
 1. [Conclusión](./docs/conclusion.html)
 
 <!---  
-1. [Mis estaciones favoritas](./docs/estaciones-favoritas.html) (Persistencia en el navegador y librerías de terceros - 1ra parte)
 1. [Más visual, mostremos las estaciones en un mapa](./docs/mapa.html) (librerías de terceros - 3ra parte e introducción a directivas) 
 -->
 
@@ -62,9 +62,9 @@
 - Qué es Angular: https://es.wikipedia.org/wiki/AngularJS
 - Tutorial oficial de AngularJS 1.x: https://docs.angularjs.org/tutorial
 - Bootstrap: http://getbootstrap.com/getting-started/
+- ngStorage: https://github.com/gsklee/ngStorage
 - API Ecobici: https://recursos-data.buenosaires.gob.ar/ckan2/ecobici/estado-ecobici.xml
 
 <!-- 
-- ngStorage: https://github.com/gsklee/ngStorage
 - Leaflet: http://tombatossals.github.io/angular-leaflet-directive/#!/examples/marker 
 -->

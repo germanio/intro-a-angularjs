@@ -26,5 +26,19 @@ angular.
                 console.log("error: " + error);
             });
         }
+        
+        self.favorita = function(id) {
+            self.estaciones.find(function(estacion) {
+                if (estacion.EstacionId === id) {
+                    //no fue definido el atributo de la estación
+                    if (estacion.favorita === undefined) {
+                        estacion.favorita = true;
+                    } else {
+                        // si ya fue definido, simplemente cambiamos su valor por el contrario
+                        estacion.favorita = !estacion.favorita;
+                    }
+                }
+            });
+        };
     }]
 });
