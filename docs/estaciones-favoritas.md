@@ -53,6 +53,62 @@
 
 ## Paso 2: Filtrar por favoritas
 
+ En éste paso, tenemos que crear un filtro como hicimos en los capítulos anteriores, que se aplique sobre el nuevo atributo para marcar las estaciones favoritas. También tenemos que permitirle al usuario seleccionar si aplicar el filtro o no.
+ 
+### El filtro
+
+ Es muy simple, sólo hay que validar si el usuario habilitó el filtro con `$ctrl.filtrarFavoritos` y si es así, sólo dejar aquellas estaciones que tienen el atributo `estacion.favorita` en `true`:
+ 
+```javascript
+    angular.
+  module('ptfApp').
+  filter('favoritos', function() {
+    return function(estaciones, activado) {
+        //si no está activado, devolver toda la lista
+        if (!activado) return estaciones;
+        
+        var estacionesFiltradas = [];
+        
+        //recorremos las estaciones para ver cual se queda y cual se va
+        angular.forEach(estaciones, function(estacion) {
+            if (estacion.favorita) {
+                estacionesFiltradas.push(estacion);
+            }
+        });
+        return estacionesFiltradas;
+    };
+  });
+
+```
+
+### Aplicamos el filtro
+ 
+ Agregamos el filtro en el ngRepeat, al final:
+ 
+```javascript
+    ... | favoritos:$ctrl.filtrarFavoritos
+```
+
+### El botón para activar el filtro
+
+ Sólo tenemos que agregar un botón con un binding a `$ctrl.filtrarFavoritos`:
+ 
+```html
+
+    <div class="input-group">
+        <span class="input-group-addon">
+            Filtrar favoritos? <input type="checkbox" aria-label="..." ng-model="$ctrl.filtrarFavoritos">
+        </span>
+    </div>
+```
+
+ Si, se ve horrible. Pero para eso está el próximo paso. :)
+ Probemos si todo funciona. Ahhh y no nos olvidemos de agregar el link al archivo del nuevo filtro en index.html!
+
+```html
+    <script src="../app/favoritos.filter.js"></script>
+```
+
 ## Paso 3: Algunas mejoras
 
 ## Ahora te toca a vos!

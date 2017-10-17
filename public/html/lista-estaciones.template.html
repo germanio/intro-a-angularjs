@@ -23,9 +23,14 @@
         </span>
         <input type="text" class="form-control" aria-label="..." placeholder="filtrar en un radio en metros de..." ng-model="$ctrl.distanciaMaxima">
     </div>
+    <div class="input-group">
+        <span class="input-group-addon">
+            Filtrar favoritos? <input type="checkbox" aria-label="..." ng-model="$ctrl.filtrarFavoritos">
+        </span>
+    </div>
 </div>
 <ul class="list-group">
-    <li ng-repeat="estacion in $ctrl.estaciones | porProximidad:$ctrl.filtrarPorProximidad:$ctrl.posicion:$ctrl.distanciaMaxima | porEstacion: $ctrl.busqueda | orderBy : $ctrl.orden" class="list-group-item">
+    <li ng-repeat="estacion in $ctrl.estaciones | porProximidad:$ctrl.filtrarPorProximidad:$ctrl.posicion:$ctrl.distanciaMaxima | porEstacion: $ctrl.busqueda | orderBy : $ctrl.orden | favoritos:$ctrl.filtrarFavoritos" class="list-group-item">
         <h4 class="list-group-item-heading">
             {{estacion.EstacionNombre}}
             <small>ID: {{estacion.EstacionId}}</small>
