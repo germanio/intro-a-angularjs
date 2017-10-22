@@ -1,3 +1,39 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="input-group">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </span>
+            <input ng-model="$ctrl.busqueda" type="text" class="form-control" placeholder="Buscar...">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="input-group" role="group">
+            <span class="input-group-addon">ordenar por</span>
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">nombre</button>
+                <button class="btn btn-default" type="button">dirección</button>
+            </span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="input-group">
+            <span class="input-group-addon">
+                Filtrar por proximidad? <input type="checkbox" aria-label="..." ng-model="$ctrl.filtrarPorProximidad">
+            </span>
+            <input type="text" class="form-control" aria-label="..." placeholder="radio [metros]" ng-model="$ctrl.distanciaMaxima">
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="input-group">
+            <span class="input-group-addon">
+                Filtrar favoritos? <input type="checkbox" aria-label="..." ng-model="$ctrl.filtrarFavoritos">
+            </span>
+            <span class="input-group-addon"></span>
+        </div>
+    </div>
+</div>
+
 <div style="padding-bottom: 9px; border-bottom: 1px solid #eee; margin-bottom: 9px;">
     <div class="input-group" style="padding-bottom: 9px;">
         <span class="input-group-addon">

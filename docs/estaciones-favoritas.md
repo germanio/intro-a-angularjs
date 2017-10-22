@@ -203,9 +203,7 @@
 
  Ahora que la funcionalidad está andando completamente. Vamos a aplicar algunos cambios en la interfaz para mejorar la experiencia del usuario.
 
-### Búsqueda y filtros al costado
-
-### Ordenamiento arriba
+### Búsqueda, filtros y ordenamiento mejorados
 
 ### Mensaje si no hay resultados
 
