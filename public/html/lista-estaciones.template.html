@@ -29,6 +29,7 @@
         </span>
     </div>
 </div>
+<div>Favoritas: {{$ctrl.storage.favoritas}}</div>
 <ul class="list-group">
     <li ng-repeat="estacion in $ctrl.estaciones | porProximidad:$ctrl.filtrarPorProximidad:$ctrl.posicion:$ctrl.distanciaMaxima | porEstacion: $ctrl.busqueda | orderBy : $ctrl.orden | favoritos:$ctrl.filtrarFavoritos" class="list-group-item">
         <h4 class="list-group-item-heading">
